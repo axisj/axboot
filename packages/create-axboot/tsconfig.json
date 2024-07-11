@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ESNext"],
+    "module": "NodeNext",
+    "noEmit": false,
+    "rootDir": "./src",
+    "outDir": "./bin",
+    "esModuleInterop": true
+  },
+  "include": [
+    "src",
+    "package.json",
+    "../../node_modules/@types/node/globals.d.ts"
+  ],
+  "exclude": ["templates/"]
+}
