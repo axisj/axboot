@@ -1,6 +1,6 @@
 {
   "name": "create-axboot",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "repository": {
     "type": "git",
@@ -38,6 +38,6 @@
   "engines": {
     "node": ">=18.0"
   },
-  "author": "",
+  "author": "AXISJ Inc, JANG KI-YOUNG(tom@axisj.com), https://github.com/axisj",
   "license": "ISC"
 }
