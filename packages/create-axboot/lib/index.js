@@ -66,7 +66,7 @@ export default async function init(rootDir, reqName, reqTemplate, cliOptions = {
     if (!cliOptions.skipInstall) {
         shell.cd(dest);
         logger.info `Installing dependencies with name=${pkgManager}...`;
-        if (shell.exec(pkgManager === "yarn" ? "yarn" : pkgManager === "bun" ? "bun install" : `${pkgManager} install --color always`, {
+        if (shell.exec(pkgManager === "yarn" ? "yarn" : pkgManager === "bun" ? "bun install" : `${pkgManager} install`, {
             env: {
                 ...process.env,
                 // Force coloring the output, since the command is invoked by

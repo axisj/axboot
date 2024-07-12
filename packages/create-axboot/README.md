@@ -3,11 +3,11 @@
 Create AXBoot apps easily with simplified commands:
 
 ```bash
-npm init axboot
+npm init axboot@latest
 ```
 
 ```bash
-yarn create axboot
+yarn create axboot@latest
 ```
 
 ```bash

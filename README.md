@@ -1,30 +1,49 @@
-# React + TypeScript + Vite
+# AXBoot (The god of Front-end)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AXBoot is a web application framework developed by AXISJ.
+A lightweight modular framework that provides developers with a set of tools and libraries for building scalable and maintainable web applications.
+AXBoot also includes a variety of built-in UI components, such as forms, tables, and charts, that you can easily customize to suit your application design.
 
-Currently, two official plugins are available:
+Applications developed with AXBoot have the following characteristics.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- High maintenance (TypeScript, API management via API interface)
+- High scalability
+- High Performance (React)
+- High security
+- Basic support for Page Tab Management System and User Input Status Maintenance System
+- Provides automatic page generation
+- Provides a variety of UI components (Ant Design Optimization)
+- Fast development (Fast Hot Module Replacement)
+- Easy theme management
+- Easy multilingual support
+- Easy permission management
+- Easy API management
 
-## Expanding the ESLint configuration
+## Requirement
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+node v18+
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Install
+```shell
+npm init axboot@latest
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Development
+
+```shell
+npm run dev
+```
+
+## Build
+
+```shell
+// for production build
+npm run build
+
+// for production alpha
+npm run build:alpha
+```
+
+You can see output files in 'dist' folder
+
+- In the development mode, check the disable cache option on the network tab.

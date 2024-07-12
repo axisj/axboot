@@ -1,0 +1,42 @@
+.spin-icon {
+  animation: aniSpinIconRotate 2s linear infinite;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+
+  .path {
+    stroke: @primary-4;
+    stroke-linecap: round;
+    animation: aniSpinIconDash 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes aniSpinIconRotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aniSpinIconDash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+@keyframes opacity-pulse {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}

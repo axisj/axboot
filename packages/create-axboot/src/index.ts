@@ -82,17 +82,14 @@ export default async function init(
     shell.cd(dest);
     logger.info`Installing dependencies with name=${pkgManager}...`;
     if (
-      shell.exec(
-        pkgManager === "yarn" ? "yarn" : pkgManager === "bun" ? "bun install" : `${pkgManager} install --color always`,
-        {
-          env: {
-            ...process.env,
-            // Force coloring the output, since the command is invoked by
-            // shelljs, which is not an interactive shell
-            ...(supportsColor.stdout ? { FORCE_COLOR: "1" } : {}),
-          },
+      shell.exec(pkgManager === "yarn" ? "yarn" : pkgManager === "bun" ? "bun install" : `${pkgManager} install`, {
+        env: {
+          ...process.env,
+          // Force coloring the output, since the command is invoked by
+          // shelljs, which is not an interactive shell
+          ...(supportsColor.stdout ? { FORCE_COLOR: "1" } : {}),
         },
-      ).code !== 0
+      }).code !== 0
     ) {
       logger.error("Dependency installation failed.");
       logger.info`The App directory has already been created, and you can retry by typing:

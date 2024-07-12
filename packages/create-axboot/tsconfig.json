@@ -12,7 +12,7 @@
     "bin",
     "src",
     "package.json",
-    "../../node_modules/@types/node/globals.d.ts"
+    "node_modules/@types/node/globals.d.ts"
   ],
-  "exclude": ["templates/"]
+  "exclude": ["templates/", "*.d.ts", "node_modules/"]
 }

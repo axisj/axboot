@@ -1,0 +1,49 @@
+.ant-dropdown.tab-item-more-dropdown {
+  .ant-dropdown-menu,
+  .ant-dropdown-menu-submenu .ant-dropdown-menu {
+    overflow: auto;
+    max-height: 100vh;
+
+    &::-webkit-scrollbar {
+      width: 11px;
+      height: 11px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: @scroll-thumb-color;
+      border-radius: 6px;
+      border: 2px solid #fff;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: darken(@scroll-thumb-color, 10%);
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: @component-background;
+    }
+
+    &::-webkit-scrollbar-track:vertical {
+      background-color: @component-background;
+    }
+
+    &::-webkit-scrollbar-track:horizontal {
+      background-color: @component-background;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: @component-background;
+    }
+  }
+
+  .ant-dropdown-menu-item,
+  .ant-dropdown-menu-submenu-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.breadcrumb-menu {
+  min-width: 120px;
+}

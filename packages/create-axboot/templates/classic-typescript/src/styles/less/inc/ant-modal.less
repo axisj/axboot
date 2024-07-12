@@ -1,0 +1,147 @@
+.ant-modal-wrap {
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    background-color: @body-background !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    //background-color: @modal-mask-scroll-thumb;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: @modal-mask-bg !important;
+  }
+}
+
+.ant-modal {
+  top: 50px;
+
+  .ant-modal-content {
+    padding: 0;
+  }
+
+  .ant-modal-close-x {
+    line-height: 16px;
+    padding-top: 2.5px;
+  }
+}
+
+// slide-down
+.ant-modal {
+  .effect-enter() {
+    animation-duration: 0.1s;
+    animation-fill-mode: both;
+  }
+  .effect-exit() {
+    animation-duration: 0.1s;
+    animation-fill-mode: both;
+  }
+
+  &.slide-down-enter,
+  &.slide-down-appear {
+    opacity: 0;
+    .effect-enter();
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    animation-play-state: paused;
+  }
+
+  &.slide-down-leave {
+    .effect-exit();
+    animation-timing-function: cubic-bezier(0.7, 0, 1, 0.5);
+    animation-play-state: paused;
+  }
+
+  &.slide-down-enter&.slide-down-enter-active,
+  &.slide-down-appear&.slide-down-appear-active {
+    animation-name: antModalSlideDown;
+    animation-play-state: running;
+  }
+
+  &.slide-down-leave&.slide-down-leave-active {
+    animation-name: antModalSlideDownLeave;
+    animation-play-state: running;
+  }
+}
+
+// slide-up
+.ant-modal {
+  .effect-enter() {
+    animation-duration: 0.1s;
+    animation-fill-mode: both;
+  }
+  .effect-exit() {
+    animation-duration: 0.1s;
+    animation-fill-mode: both;
+  }
+
+  &.slide-up-enter,
+  &.slide-up-appear {
+    opacity: 0;
+    .effect-enter();
+    animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    animation-play-state: paused;
+  }
+
+  &.slide-up-leave {
+    .effect-exit();
+    animation-timing-function: cubic-bezier(0.7, 0, 1, 0.5);
+    animation-play-state: paused;
+  }
+
+  &.slide-up-enter&.slide-up-enter-active,
+  &.slide-up-appear&.slide-up-appear-active {
+    animation-name: antModalSlideUp;
+    animation-play-state: running;
+  }
+
+  &.slide-up-leave&.slide-up-leave-active {
+    animation-name: antModalSlideUpLeave;
+    animation-play-state: running;
+  }
+}
+
+
+@keyframes antModalSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes antModalSlideDownLeave {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes antModalSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30%) translateZ(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes antModalSlideUpLeave {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+}

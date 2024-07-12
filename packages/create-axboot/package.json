@@ -1,6 +1,6 @@
 {
   "name": "create-axboot",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "",
   "repository": {
     "type": "git",
@@ -17,14 +17,17 @@
     "semver": "^7.5.4",
     "shelljs": "^0.8.5",
     "tslib": "^2.6.0",
-    "chalk": "^5.3.0"
+    "chalk": "^5.3.0",
+    "supports-color": "^9.4.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.0",
     "@types/node": "^18.16.19",
     "@types/shelljs": "^0.8.14",
     "@types/lodash": "^4.17.6",
     "@types/prompts": "^2.4.4",
-    "@types/semver": "^7.5.0"
+    "@types/semver": "^7.5.0",
+    "@types/supports-color": "^8.1.1"
   },
   "overrides": {
     "minimatch": "5.1.2",
@@ -33,7 +36,8 @@
   "scripts": {
     "create-axboot": "create-axboot",
     "build": "tsc --build",
-    "watch": "tsc --build --watch"
+    "watch": "tsc --build --watch",
+    "publish": "npm publish --access public"
   },
   "engines": {
     "node": ">=18.0"
