@@ -6,7 +6,7 @@
     "noEmit": false,
     "rootDir": "./src",
     "outDir": "./lib",
-    "esModuleInterop": true
+    "esModuleInterop": true,
   },
   "include": [
     "bin",

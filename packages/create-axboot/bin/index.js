@@ -47,7 +47,7 @@ try {
     )
     .description("Initialize website.")
     .action((siteName, template, rootDir, options) => {
-      console.log("create-axboot 5", siteName, template, rootDir, options);
+      // console.log("create-axboot 5", siteName, template, rootDir, options);
       import("../lib/index.js").then(({ default: init }) =>
         init(path.resolve(rootDir ?? "."), siteName, template, options),
       );

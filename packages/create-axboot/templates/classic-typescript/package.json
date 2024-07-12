@@ -1,0 +1,17 @@
+{
+  "name": "AXBoot-classic-template",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}
