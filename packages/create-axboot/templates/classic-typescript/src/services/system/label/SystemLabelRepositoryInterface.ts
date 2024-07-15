@@ -1,4 +1,4 @@
-import { ApiListResponse, DefaultDto } from "@src/@types";
+import { ApiListResponse, DefaultDto } from "@types";
 
 export interface Label extends DefaultDto {
   id?: number;

@@ -22,7 +22,7 @@ import { BaseOptionType } from "rc-cascader";
 import React from "react";
 import { IconArrowDown, IconArrowLeft, IconArrowRight, IconArrowUp, IconClose } from "./components/icon";
 import { useAppStore } from "./stores";
-import { themePalette } from "./styles/theme";
+import theme, { themePalette } from "./styles/theme";
 
 /*
  * Modal
@@ -107,7 +107,7 @@ if (inputNumberDefaultProps) {
 }
 
 if (Input.defaultProps) {
-  Input.defaultProps["onMouseUp"] = e => {
+  Input.defaultProps["onMouseUp"] = (e) => {
     e.preventDefault();
     e.stopPropagation();
   };

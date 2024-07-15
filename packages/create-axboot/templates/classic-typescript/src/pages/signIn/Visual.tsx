@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import React, { useEffect, useState } from "react";
 import pkg from "../../../package.json";
-import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles/emotion";
-import { mediaMin } from "@src/styles/mediaQueries";
+import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles";
+import { mediaMin } from "../../styles/mediaQueries";
 
 interface Props {}
 
@@ -52,32 +52,32 @@ const Div = styled.div`
     &.bg00 {
       background: linear-gradient(45deg, #0f93ff, #feb47b);
       background-size: cover;
-      color: ${p => p.theme.white_color};
+      color: ${(p) => p.theme.white_color};
     }
     &.bg01 {
       background: url("/images/signin-bg01.jpeg") no-repeat;
       background-size: cover;
-      color: ${p => p.theme.white_color};
+      color: ${(p) => p.theme.white_color};
     }
     &.bg02 {
       background: url("/images/signin-bg02.jpeg") no-repeat;
       background-size: cover;
-      color: ${p => p.theme.text_display_color};
+      color: ${(p) => p.theme.text_display_color};
     }
     &.bg03 {
       background: url("/images/signin-bg03.jpeg") no-repeat;
       background-size: cover;
-      color: ${p => p.theme.white_color};
+      color: ${(p) => p.theme.white_color};
     }
     &.bg04 {
       background: url("/images/signin-bg04.jpeg") no-repeat;
       background-size: cover;
-      color: ${p => p.theme.white_color};
+      color: ${(p) => p.theme.white_color};
     }
     &.bg05 {
       background: url("/images/signin-bg05.jpeg") no-repeat;
       background-size: cover;
-      color: ${p => p.theme.white_color};
+      color: ${(p) => p.theme.white_color};
     }
 
     p {

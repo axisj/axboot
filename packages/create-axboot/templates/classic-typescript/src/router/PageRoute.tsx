@@ -1,37 +1,37 @@
 import React from "react";
 import { matchPath, Route, Routes, useLocation } from "react-router-dom";
-import { usePageTabStore, useUserStore } from "@src/stores";
-import { StoreSpinner } from "@axboot/core/components";
-import { EXAMPLE_ROUTERS } from "@axboot/core/router/exampleRouter";
-import { loadCoreExample, loadCoreSystem } from "@axboot/core/utils/object";
+import { usePageTabStore, useUserStore } from "stores";
+import { StoreSpinner } from "@core/components";
+import { EXAMPLE_ROUTERS } from "@core/router/exampleRouter";
+import { loadCoreExample, loadCoreSystem } from "utils/loadCorePage";
 import RequireAuth from "./RequireAuth";
 import RestrictAuth from "./RestrictAuth";
 import { ROUTES, ROUTES_LIST } from "./Routes";
 import { useAppMenu } from "./useAppMenu";
 
-const FrameDefault = React.lazy(() => import("src/pageFrame/FrameDefault"));
-const FrameProgram = React.lazy(() => import("src/pageFrame/FrameProgram"));
+const FrameDefault = React.lazy(() => import("pageFrame/FrameDefault"));
+const FrameProgram = React.lazy(() => import("pageFrame/FrameProgram"));
 
-const Home = React.lazy(() => import("src/pages/home/App"));
-const SignIn = React.lazy(() => import("src/pages/signIn/App"));
-const Error404 = React.lazy(() => import("src/pages/error/Error404"));
-const ModalDemo = React.lazy(() => import("@axboot/core/modals/demo/App"));
+const Home = React.lazy(() => import("pages/home/App"));
+const SignIn = React.lazy(() => import("pages/signIn/App"));
+const Error404 = React.lazy(() => import("pages/error/Error404"));
+const ModalDemo = React.lazy(() => import("@core/modals/demo/App"));
 
 /* ##IMPORT_COMPONENT_POSITION## */
 
 function PageRoute() {
-  const setSelectedMenuUuid = useUserStore(s => s.setSelectedMenuUuid);
-  const setActiveTabByPath = usePageTabStore(s => s.setActiveTabByPath);
+  const setSelectedMenuUuid = useUserStore((s) => s.setSelectedMenuUuid);
+  const setActiveTabByPath = usePageTabStore((s) => s.setActiveTabByPath);
   const { MENUS_LIST } = useAppMenu();
   const location = useLocation();
 
   React.useEffect(() => {
-    const route = ROUTES_LIST.find(route => matchPath(route.path, location.pathname));
+    const route = ROUTES_LIST.find((route) => matchPath(route.path, location.pathname));
     if (!route) {
       return;
     }
 
-    const currentMenu = MENUS_LIST.find(m => m.progCd && m.progCd === route.program_type);
+    const currentMenu = MENUS_LIST.find((m) => m.progCd && m.progCd === route.program_type);
     setSelectedMenuUuid(currentMenu?.keyPath?.join("_") ?? "");
 
     setActiveTabByPath(location.pathname);

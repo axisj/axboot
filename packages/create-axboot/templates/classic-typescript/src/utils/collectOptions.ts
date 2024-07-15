@@ -1,8 +1,8 @@
-import { Option } from "@src/@types";
+import { Option } from "../@types";
 
 export const collectOptionsValue = (options?: Option[], key?: string) => {
   const value = options
-    ?.map(n => {
+    ?.map((n) => {
       if (`${n.value}`.startsWith("{")) {
         try {
           const jsonValue = JSON.parse(`${n.value}`);
@@ -18,7 +18,7 @@ export const collectOptionsValue = (options?: Option[], key?: string) => {
 };
 
 export const collectOptionsLabel = (options?: Option[]) => {
-  return options?.map(n => n.label).join(",");
+  return options?.map((n) => n.label).join(",");
 };
 
 export const collectCds = (...cds) => {

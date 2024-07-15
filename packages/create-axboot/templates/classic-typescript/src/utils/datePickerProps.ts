@@ -8,7 +8,7 @@ export const getDatePickerProps = (form: any, keyPath: string) => {
     //     }
     //   }
     // },
-    onKeyDown: evt => {
+    onKeyDown: (evt) => {
       if (evt.key === "Enter") {
         evt.currentTarget.blur();
       }

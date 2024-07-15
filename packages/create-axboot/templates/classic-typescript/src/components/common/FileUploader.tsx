@@ -1,13 +1,13 @@
 import { DeleteOutlined, DownloadOutlined, EyeOutlined, QuestionCircleOutlined } from "@ant-design/icons";
-import { IconText } from "@axboot/core/components/common";
-import { errorDialog } from "@axboot/core/components/dialogs";
+import { IconText } from "@core/components/common";
+import { errorDialog } from "@core/components/dialogs";
 import { getAppData } from "@axboot/core/utils/store";
-import { FileDto } from "@src/@types";
+import { FileDto } from "@types";
 import { Button, Form, Input, Modal, Popconfirm, Space } from "antd";
 import axios from "axios";
-import { useBtnI18n, useI18n } from "@src/hooks";
+import { useBtnI18n, useI18n } from "hooks";
 import React from "react";
-import { API_URL } from "@src/services/apiWrapper";
+import { API_URL } from "services/apiWrapper";
 
 interface Props {
   file?: FileDto;
@@ -26,7 +26,7 @@ function FileUploader({ file, onChangeFile, disabled }: Props) {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const abortController = React.useRef(new AbortController()).current;
 
-  const handleButtonClick = React.useCallback(e => {
+  const handleButtonClick = React.useCallback((e) => {
     inputRef.current?.click();
   }, []);
 
@@ -48,7 +48,7 @@ function FileUploader({ file, onChangeFile, disabled }: Props) {
             "Content-Type": "multipart/form-data",
             authorization: getAppData()?.authorization ?? "",
           },
-          onUploadProgress: progressEvent => {
+          onUploadProgress: (progressEvent) => {
             if (file) {
               setProgress(Math.round((progressEvent.loaded / file.size) * 100));
             }
@@ -92,7 +92,7 @@ function FileUploader({ file, onChangeFile, disabled }: Props) {
   return (
     <>
       <input
-        type="file"
+        type='file'
         accept={"image/png, image/jpeg, image/gif, image/bmp"}
         ref={inputRef}
         onChange={onChange}
@@ -179,7 +179,7 @@ function FileUploader({ file, onChangeFile, disabled }: Props) {
             </IconText>
 
             <Popconfirm
-              title="Delete"
+              title='Delete'
               description={t("msg.deleteConfirm")}
               icon={<QuestionCircleOutlined style={{ color: "red" }} />}
               onConfirm={handleDel}
@@ -193,7 +193,7 @@ function FileUploader({ file, onChangeFile, disabled }: Props) {
       </Space>
 
       <Modal open={previewOpen} title={uploadedFile?.savePath} footer={null} onCancel={() => setPreviewOpen(false)}>
-        <img alt="example" style={{ width: "100%" }} src={`${API_URL}${uploadedFile?.url}`} />
+        <img alt='example' style={{ width: "100%" }} src={`${API_URL}${uploadedFile?.url}`} />
       </Modal>
     </>
   );

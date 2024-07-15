@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
-import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles/emotion";
+import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles";
 
 export interface ModalLayoutProps {
   id?: string;
@@ -42,7 +42,7 @@ export function ModalHeader(props: ModalHeaderProps) {
 export const HeaderContainer = styled.div`
   ${SMixinFlexRow("stretch", "center")};
   height: 54px;
-  border-bottom: 1px solid ${p => p.theme.border_color_split};
+  border-bottom: 1px solid ${(p) => p.theme.border_color_split};
   padding: 0 50px 0 20px;
 
   [role="modal-header-title"] {
@@ -52,7 +52,7 @@ export const HeaderContainer = styled.div`
     text-overflow: ellipsis;
     font-size: 16px;
     font-weight: 600;
-    color: ${p => p.theme.text_heading_color};
+    color: ${(p) => p.theme.text_heading_color};
   }
 
   [role="modal-header-addon"] {
@@ -70,6 +70,6 @@ export const ModalFooter = styled.div<{ compact?: boolean }>`
   ${SMixinFlexRow("flex-end", "center")};
   padding: 15px 20px;
   gap: 6px;
-  background: ${p => p.theme.header_background};
+  background: ${(p) => p.theme.header_background};
   border-radius: 0 0 5px 5px;
 `;

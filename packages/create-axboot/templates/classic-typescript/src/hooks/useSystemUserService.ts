@@ -1,6 +1,6 @@
+import { SystemUser, SystemUserService } from "../services";
 import React from "react";
 import { DataGridPageResponse } from "../@types";
-import { SystemUser, SystemUserService } from "../services";
 import { errorHandling } from "../utils";
 
 export function useSystemUserService() {

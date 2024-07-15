@@ -3,9 +3,9 @@ import { getFileNameAndExt } from "@axboot/core/utils";
 import { getAppData } from "@axboot/core/utils/store";
 import { Button, Form, Modal, Upload, UploadFile } from "antd";
 import { RcFile, UploadProps } from "antd/es/upload";
-import { useI18n } from "@src/hooks";
+import { useI18n } from "hooks";
 import React from "react";
-import { API_URL } from "@src/services/apiWrapper";
+import { API_URL } from "services/apiWrapper";
 import { v4 as uuidv4 } from "uuid";
 
 export interface UploadImage {
@@ -41,7 +41,7 @@ const getBase64 = (file: RcFile): Promise<string> =>
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => resolve(reader.result as string);
-    reader.onerror = error => reject(error);
+    reader.onerror = (error) => reject(error);
   });
 
 function UploadImages({ maxCount = 1, onChange, files = [] }: Props) {
@@ -89,7 +89,7 @@ function UploadImages({ maxCount = 1, onChange, files = [] }: Props) {
           onChange?.([{ url, thumbUrl }]);
         }
       },
-      onRemove: file => {
+      onRemove: (file) => {
         onChange?.([]);
       },
     }),
@@ -116,7 +116,7 @@ function UploadImages({ maxCount = 1, onChange, files = [] }: Props) {
         </Upload>
 
         <Modal open={previewOpen} title={previewTitle} footer={null} onCancel={handleCancel}>
-          <img alt="example" style={{ width: "100%" }} src={previewImage} />
+          <img alt='example' style={{ width: "100%" }} src={previewImage} />
         </Modal>
       </Form.Item>
     </Form.Item>

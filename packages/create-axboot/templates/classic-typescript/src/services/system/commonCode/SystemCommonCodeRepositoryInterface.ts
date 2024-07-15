@@ -1,4 +1,4 @@
-import { DataGridPageResponse, DefaultDto } from "@src/@types";
+import { DataGridPageResponse, DefaultDto } from "@types";
 import React from "react";
 
 export interface SystemCommonCode extends DefaultDto {

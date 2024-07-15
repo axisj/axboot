@@ -17,7 +17,7 @@ interface Props {
   className?: string;
 }
 
-export const menuIcons = Object.values(MenuIconType).filter(v => isNaN(Number(v)));
+export const menuIcons = Object.values(MenuIconType).filter((v) => isNaN(Number(v)));
 
 const Icon: Record<keyof typeof MenuIconType, any> = {
   Default: IconDefaultProgram,

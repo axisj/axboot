@@ -1,4 +1,4 @@
-import { apiWrapper } from "@src/services/apiWrapper";
+import { apiWrapper } from "services/apiWrapper";
 import {
   GetSystemProgramResponse,
   PutSystemProgramResponse,

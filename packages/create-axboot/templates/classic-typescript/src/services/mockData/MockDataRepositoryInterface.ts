@@ -1,4 +1,4 @@
-import { ApiPageResponse } from "@src/@types";
+import { ApiPageResponse } from "../../@types";
 
 export interface MockData {
   id: number;

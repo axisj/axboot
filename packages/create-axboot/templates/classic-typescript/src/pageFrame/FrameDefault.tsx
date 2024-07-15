@@ -1,4 +1,4 @@
-import { SMixinFlexColumn } from "@axboot/core/styles/emotion";
+import { SMixinFlexColumn } from "@axboot/core/styles";
 import styled from "@emotion/styled";
 import React from "react";
 import { Outlet } from "react-router-dom";
@@ -17,7 +17,7 @@ export const PageFrameContainer = styled.div`
   ${SMixinFlexColumn("stretch", "stretch")};
   height: 100vh;
   width: 100vw;
-  background: ${p => p.theme.body_background};
+  background: ${(p) => p.theme.body_background};
   flex: 1;
   overflow: auto;
 `;

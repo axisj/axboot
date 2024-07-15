@@ -1,4 +1,4 @@
-import { AppMenuGroup, User } from "@src/services";
+import { AppMenuGroup, User } from "services";
 
 export const getAppMenuMockData: AppMenuGroup[] = [
   {

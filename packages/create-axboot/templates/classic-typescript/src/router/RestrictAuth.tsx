@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { useUserStore } from "@src/stores";
+import { useUserStore } from "stores";
 import { ROUTES } from "./Routes";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 function RestrictAuth({ children }: Props) {
   const location = useLocation();
-  const me = useUserStore(s => s.me);
+  const me = useUserStore((s) => s.me);
 
   if (me) {
     return <Navigate to={ROUTES.HOME.path} state={{ from: location }} replace />;

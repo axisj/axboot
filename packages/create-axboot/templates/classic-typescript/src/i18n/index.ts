@@ -42,11 +42,11 @@ i18n
 
 window["saveMissingKeys"] = () => {
   const locale = missingLocales[i18n.language];
-  Object.keys(locale).forEach(ns => {
+  Object.keys(locale).forEach((ns) => {
     console.group(`${i18n.language}/${ns}.json`);
     console.log(
       Object.keys(locale[ns])
-        .map(k => `"${k}": "${k}"`)
+        .map((k) => `"${k}": "${k}"`)
         .join(", \n"),
     );
     console.groupEnd();

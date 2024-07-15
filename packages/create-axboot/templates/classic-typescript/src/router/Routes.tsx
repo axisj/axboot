@@ -1,7 +1,7 @@
-import { getFlattedRoutes } from "@axboot/core/utils/store/getFlattedRoutes";
 import React from "react";
-import { example_router, getRoutes } from "@axboot/core/router/exampleRouter";
+import { getFlattedRoutes } from "@axboot/core/utils/store/getFlattedRoutes";
 import { PROGRAM_TYPES } from "./@programTypes";
+import { example_router, getRoutes } from "@core/router/exampleRouter";
 
 export interface RawRoute {
   key?: string;
