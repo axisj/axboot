@@ -1,4 +1,4 @@
-import pkg from "../../../../package.json";
+import pkg from "@axboot/core/package.json";
 
 {
   console.log(`

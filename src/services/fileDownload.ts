@@ -1,6 +1,6 @@
 import axios from "axios";
 import { saveAs } from "file-saver";
-import { getAppData } from "@axboot/core/utils/store";
+import { getAppData } from "@core/utils/store";
 import { ApiError } from "./ApiError";
 import { API_URL } from "./apiWrapper";
 

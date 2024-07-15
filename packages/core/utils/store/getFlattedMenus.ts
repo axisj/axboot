@@ -1,5 +1,5 @@
-import { MenuItem } from "../../../src/router";
-import { AppMenu, AppMenuGroup } from "../../../src/services";
+import { MenuItem } from "router";
+import { AppMenu, AppMenuGroup } from "services";
 
 export const getFlattedMenus = (menus: MenuItem[]) => {
   const useMenuFlatFn = ({ children = [], ...rest }: any) => {

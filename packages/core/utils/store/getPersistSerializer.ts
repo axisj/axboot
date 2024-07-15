@@ -34,7 +34,7 @@ export function getPersistSerializer<T>(
       return state;
     },
     storage: {
-      getItem: async name => {
+      getItem: async (name) => {
         const value: string | undefined = await get(name);
 
         try {
@@ -66,7 +66,7 @@ export function getPersistSerializer<T>(
 
         set(name, storageValue);
       },
-      removeItem: async name => {
+      removeItem: async (name) => {
         await del(name);
       },
     },

@@ -1,4 +1,4 @@
-import { DataGridPageResponse, DefaultDto } from "@src/@types";
+import { DataGridPageResponse, DefaultDto } from "@types";
 
 export interface SystemUser extends DefaultDto {
   userCd?: string; //사용자 코드,

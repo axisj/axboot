@@ -8,7 +8,7 @@ export function convertDateToString(
   if (!target) return target;
 
   if (keys) {
-    keys.forEach(key => {
+    keys.forEach((key) => {
       if (target[key] instanceof dayjs) {
         target[key] = target[key].format(formatString);
       } else if (target[key]) {
@@ -16,7 +16,7 @@ export function convertDateToString(
       }
     });
   } else {
-    Object.keys(target).forEach(key => {
+    Object.keys(target).forEach((key) => {
       if (target[key] instanceof dayjs) {
         target[key] = target[key].format(formatString);
       }

@@ -1,8 +1,8 @@
-import { alertDialog, errorDialog } from "@axboot/core/components/dialogs";
-import { DialogRequest } from "@axboot/core/components/dialogs/dialogModal";
-import { ApiErrorCode } from "@src/@types";
+import { alertDialog, errorDialog } from "@core/components/dialogs";
+import { DialogRequest } from "@core/components/dialogs/dialogModal";
+import { ApiErrorCode } from "@types";
 import { FormInstance, message } from "antd";
-import i18n from "@src/i18n";
+import i18n from "i18n";
 
 const knownErrorCodes = [
   ApiErrorCode.SQL_DUPLICATE_ERROR,
@@ -49,7 +49,7 @@ export async function errorHandling(err: any, msgs?: Record<string, any>) {
 }
 
 export async function formErrorHandling(form: FormInstance) {
-  const errors = form.getFieldsError().filter(info => info.errors.length);
+  const errors = form.getFieldsError().filter((info) => info.errors.length);
   if (errors && errors[0] && errors[0].name) {
     const fieldNames = errors[0].name;
     form.scrollToField(fieldNames);

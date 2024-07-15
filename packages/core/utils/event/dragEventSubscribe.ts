@@ -1,4 +1,4 @@
-import { MousePosition } from "../../../src/@types";
+import { MousePosition } from "@types";
 
 export type DragEventSubscribeCallbackFn = (mousePosition: MousePosition, stopEvent: () => void) => void;
 

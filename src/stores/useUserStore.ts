@@ -1,8 +1,8 @@
-import buildStore from "@axboot/core/stores/buildStore";
-import { PROGRAM_TYPES } from "@src/router";
-import { User, UserService } from "@src/services";
-import { usePageTabStore } from "@axboot/core/stores/usePageTabStore";
-import { clearAppData, getAppData } from "@axboot/core/utils/store";
+import { clearAppData, getAppData } from "@axboot/core/utils";
+import buildStore from "@core/stores/buildStore";
+import { usePageTabStore } from "@core/stores/usePageTabStore";
+import { PROGRAM_TYPES } from "router";
+import { User, UserService } from "services";
 import { setApiHeader } from "../services/apiWrapper";
 import { useAppStore } from "./useAppStore";
 
@@ -50,7 +50,7 @@ export const useUserStore = buildStore<UserStore>(
   (set, get) => ({
     ...userInitialState,
     setLoaded: (loaded: boolean) => set({ loaded }),
-    setMe: async me => {
+    setMe: async (me) => {
       usePageTabStore.getState().clearTab();
       await useAppStore.getState().callAppMenu();
 
@@ -69,26 +69,26 @@ export const useUserStore = buildStore<UserStore>(
       get().clearMe();
       usePageTabStore.getState().clearTab();
     },
-    setAuthorityList: authorityList => {
+    setAuthorityList: (authorityList) => {
       set({ authorityList });
     },
-    setProgramList: programList => {
+    setProgramList: (programList) => {
       set({ programList });
     },
-    setOpenedMenuUuids: uuids => {
+    setOpenedMenuUuids: (uuids) => {
       set({ openedMenuUuids: uuids });
     },
-    setSelectedMenuUuid: uuid => {
+    setSelectedMenuUuid: (uuid) => {
       set({ selectedMenuUuid: uuid });
     },
   }),
-  storageValue => {
+  (storageValue) => {
     storageValue.state.selectedMenuUuid = "";
     return storageValue;
   },
 );
 
-useUserStore.persist.onFinishHydration(state => {
+useUserStore.persist.onFinishHydration((state) => {
   const appData = getAppData();
 
   if (appData) {

@@ -1,6 +1,6 @@
+import { darken } from "../../utils";
 import { css } from "@emotion/react";
 import React from "react";
-import { darken } from "@axboot/core/styles/colorUtil";
 
 type FlexDirection = React.CSSProperties["flexDirection"];
 type FlexWrap = React.CSSProperties["flexWrap"];
@@ -129,7 +129,7 @@ function attachPx<T extends ISMixinGrid["columnWidths"] | ISMixinGrid["gap"]>(v:
     case "string":
       return !Number.isNaN(Number(v)) ? `${v}px` : v;
     case "object":
-      return Array.isArray(v) ? v.map(t => attachPx(t)) : { min: attachPx(v.min), max: attachPx(v.max) };
+      return Array.isArray(v) ? v.map((t) => attachPx(t)) : { min: attachPx(v.min), max: attachPx(v.max) };
     default:
       return v;
   }

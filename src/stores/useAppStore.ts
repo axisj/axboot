@@ -1,8 +1,8 @@
-import buildStore from "@axboot/core/stores/buildStore";
-import { StoreActions } from "@axboot/core/stores/types";
+import buildStore from "@core/stores/buildStore";
+import { StoreActions } from "@core/stores/types";
 import { Tooltip } from "antd";
-import i18n, { LanguageType } from "@src/i18n";
-import { themePalette, ThemeType } from "@src/styles/theme";
+import i18n, { LanguageType } from "i18n";
+import { themePalette, ThemeType } from "styles/theme";
 import { AppMenuGroup, AppService } from "../services";
 
 export type NavPosition = {
@@ -84,7 +84,7 @@ export const useAppStore = buildStore<AppStore>("app", 1, (set, get) => ({
   ...getAppStoreActions(set, get),
 }));
 
-useAppStore.persist.onFinishHydration(state => {
+useAppStore.persist.onFinishHydration((state) => {
   state.appMenuGroupLoaded = false;
 
   i18n.changeLanguage(state.currentLanguage);

@@ -1,18 +1,18 @@
 import { IdcardOutlined, LockOutlined } from "@ant-design/icons";
-import { IconAXBootOpened } from "@axboot/core/components/axboot";
-import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles/emotion";
+import { IconAXBootOpened } from "@core/components/axboot";
+import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles";
 import { getTrimNonEmptyRegExp } from "@axboot/core/utils";
 import styled from "@emotion/styled";
-import { IconArrowLogIn, IconMoon, IconSun } from "@src/components/icon";
-import { LangSelector } from "@src/components/LangSelector";
-import { useBtnI18n, useDidMountEffect, useI18n, useSpinning } from "@src/hooks";
-import { UserService } from "@src/services";
-import { useAppStore, useUserStore } from "@src/stores";
-import { mediaMin } from "@src/styles/mediaQueries";
-import { errorHandling } from "@src/utils";
 import { Button, Checkbox, Divider, Form, Input, Space, Switch } from "antd";
+import { LangSelector } from "components/LangSelector";
 import dayjs from "dayjs";
+import { useBtnI18n, useDidMountEffect, useI18n, useSpinning } from "hooks";
 import React from "react";
+import { UserService } from "services";
+import { useAppStore, useUserStore } from "stores";
+import { errorHandling } from "utils";
+import { IconArrowLogIn, IconMoon, IconSun } from "../../components/icon";
+import { mediaMin } from "../../styles/mediaQueries";
 import { Visual } from "./Visual";
 
 interface Props {
@@ -29,11 +29,11 @@ export interface SignInFormItem {
 function App({}: Props) {
   const { t } = useI18n("login");
   const btnT = useBtnI18n();
-  const setMe = useUserStore(s => s.setMe);
+  const setMe = useUserStore((s) => s.setMe);
 
   const { spinning, setSpinning } = useSpinning<{ signIn: boolean }>();
-  const theme = useAppStore(s => s.theme);
-  const setTheme = useAppStore(s => s.setTheme);
+  const theme = useAppStore((s) => s.theme);
+  const setTheme = useAppStore((s) => s.setTheme);
   const [isApiTest, setIsApiTest] = React.useState(false);
 
   const [form] = Form.useForm<SignInFormItem>();
@@ -103,7 +103,7 @@ function App({}: Props) {
             <Form<SignInFormItem> form={form} onFinish={onSignIn} layout={"vertical"}>
               <Form.Item
                 label={t("로그인아이디")}
-                name="userId"
+                name='userId'
                 rules={[
                   {
                     required: true,
@@ -116,7 +116,7 @@ function App({}: Props) {
 
               <Form.Item
                 label={t("비밀번호")}
-                name="password"
+                name='password'
                 rules={[
                   {
                     required: true,
@@ -129,31 +129,31 @@ function App({}: Props) {
 
               <Form.Item
                 label={t("OTP")}
-                name="otpNum"
+                name='otpNum'
                 rules={[
                   {
                     required: true,
                   },
                 ]}
               >
-                <Input.OTP formatter={str => str.toUpperCase()} length={6} />
+                <Input.OTP formatter={(str) => str.toUpperCase()} length={6} />
               </Form.Item>
 
               <Divider />
 
               <Form.Item>
-                <Button type="primary" htmlType="submit" role={"sign-in-btn"} block loading={spinning?.signIn}>
+                <Button type='primary' htmlType='submit' role={"sign-in-btn"} block loading={spinning?.signIn}>
                   <IconArrowLogIn size={20} />
                   {btnT("로그인")}
                 </Button>
               </Form.Item>
 
               <Form.Item>
-                <Form.Item name="remember" valuePropName="checked" noStyle>
+                <Form.Item name='remember' valuePropName='checked' noStyle>
                   <Checkbox>{t("아이디 저장")}</Checkbox>
                 </Form.Item>
 
-                <a className="reset-password">{t("비밀번호 초기화")}</a>
+                <a className='reset-password'>{t("비밀번호 초기화")}</a>
               </Form.Item>
             </Form>
           </div>
@@ -173,7 +173,7 @@ function App({}: Props) {
                 {t("API TEST")} &nbsp;
                 <Switch
                   checked={isApiTest}
-                  onChange={checked => {
+                  onChange={(checked) => {
                     localStorage.setItem("isApiTest", checked ? "T" : "F");
                     window.location.reload();
                   }}
@@ -195,11 +195,11 @@ const Div = styled.div`
   width: calc(100% - 48px);
 
   ${mediaMin.md} {
-    background: ${p => p.theme.component_background};
+    background: ${(p) => p.theme.component_background};
     width: 760px;
     border-radius: 36px;
-    background: ${p => p.theme.component_background};
-    border: 1px solid ${p => p.theme.border_color_base};
+    background: ${(p) => p.theme.component_background};
+    border: 1px solid ${(p) => p.theme.border_color_base};
     box-shadow: 0 0 64px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(8px);
   }
@@ -231,7 +231,7 @@ const SignInBox = styled.div`
     width: 100%;
     margin-top: 20px;
     ${SMixinFlexColumn("center", "center")};
-    color: ${p => p.theme.text_display_color};
+    color: ${(p) => p.theme.text_display_color};
   }
 
   .box-body {
@@ -284,7 +284,7 @@ const SignInBox = styled.div`
   .box-footer {
     ${SMixinFlexRow("space-between", "center")};
     padding: 0 24px;
-    color: ${p => p.theme.text_body_color};
+    color: ${(p) => p.theme.text_body_color};
   }
 `;
 

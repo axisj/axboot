@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { alpha } from "@axboot/core/styles/colorUtil";
-import { SMixinFlexColumn, SMixinFlexRow, SMixinScrollerStyle } from "@axboot/core/styles/emotion";
+import { SMixinFlexColumn, SMixinFlexRow, SMixinScrollerStyle } from "@axboot/core/styles";
+import { alpha } from "@axboot/core/utils";
 import { PageLayoutProps } from "./PageLayout";
 
 export type HeaderSize = "small" | "medium" | "large";
@@ -11,7 +11,7 @@ export const PageLayoutContainer = styled.div<PageLayoutProps>`
   padding: 0;
 
   .datagrid-editable {
-    background: ${p => alpha(p.theme.primary_color, 0.1)};
+    background: ${(p) => alpha(p.theme.primary_color, 0.1)};
     user-select: none;
 
     input {
@@ -38,7 +38,7 @@ export const PageHeader = styled.div`
   ${SMixinFlexRow("space-between", "center", "wrap")};
 
   font-weight: 700;
-  color: ${p => p.theme.text_heading_color};
+  color: ${(p) => p.theme.text_heading_color};
   padding: 24px 28px 4px;
   margin-top: 8px;
   font-size: 20px;
@@ -62,7 +62,7 @@ export const PageTabBar = styled.div`
 export const PageContentBoxHeader = styled.div<{ size?: HeaderSize }>`
   ${SMixinFlexRow("space-between", "center")};
   font-weight: 600;
-  color: ${p => p.theme.text_heading_color};
+  color: ${(p) => p.theme.text_heading_color};
   margin: 0 0 8px 0;
 
   ${({ size = "medium" }) => {
@@ -96,7 +96,7 @@ export const PageContentBox = styled.div<{ level?: 1 | 2 | 3 }>`
       padding: 0 2px;
 
       &:hover {
-        color: ${p => p.theme.primary_color};
+        color: ${(p) => p.theme.primary_color};
       }
     }
   }
@@ -126,7 +126,7 @@ export const PageContentBox = styled.div<{ level?: 1 | 2 | 3 }>`
 
 export const PageGroupTitle = styled.div`
   margin-bottom: 5px;
-  color: ${p => p.theme.text_heading_color};
+  color: ${(p) => p.theme.text_heading_color};
   font-weight: bold;
   font-size: 1.1em;
 `;
@@ -154,7 +154,7 @@ export const PageFrameHeader = styled.div`
   margin-bottom: 12px;
   font-size: 16px;
   font-weight: bold;
-  color: ${p => p.theme.text_heading_color};
+  color: ${(p) => p.theme.text_heading_color};
 `;
 
 export const PageFrameRow = styled.div<{ scroll?: boolean }>`
@@ -163,7 +163,7 @@ export const PageFrameRow = styled.div<{ scroll?: boolean }>`
   ${SMixinFlexRow("stretch", "stretch")};
   padding: 0;
 
-  border-top: 1px solid ${p => p.theme.border_color_base};
+  border-top: 1px solid ${(p) => p.theme.border_color_base};
 
   ${({ scroll }) => {
     if (!scroll) {

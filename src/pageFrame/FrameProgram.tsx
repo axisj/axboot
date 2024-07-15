@@ -1,18 +1,18 @@
-import AppMenuBarTools from "@axboot/core/components/nav/AppMenuBarTools";
-import Logo from "@axboot/core/components/nav/Logo";
-import NavGroup from "@axboot/core/components/nav/NavGroup";
-import NavUserTopMenu from "@axboot/core/components/nav/NavUserTopMenu";
-import { SideBox } from "@axboot/core/components/nav/SideBox";
-import TabGroup from "@axboot/core/components/tabs/TabGroup";
-import { usePageTabStore } from "@axboot/core/stores/usePageTabStore";
-import { SMixinFlexColumn, SMixinFlexRow, SMixinScrollerStyle } from "@axboot/core/styles/emotion";
+import AppMenuBarTools from "@core/components/nav/AppMenuBarTools";
+import Logo from "@core/components/nav/Logo";
+import NavGroup from "@core/components/nav/NavGroup";
+import NavUserTopMenu from "@core/components/nav/NavUserTopMenu";
+import { SideBox } from "@core/components/nav/SideBox";
+import TabGroup from "@core/components/tabs/TabGroup";
+import { usePageTabStore } from "@core/stores/usePageTabStore";
+import { SMixinFlexColumn, SMixinFlexRow, SMixinScrollerStyle } from "@axboot/core/styles";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { useAppStore } from "@src/stores";
-import { mediaMin } from "@src/styles/mediaQueries";
-import pkg from "../../package.json";
+import { useAppStore } from "stores";
+import { mediaMin } from "styles/mediaQueries";
+import pkg from "@axboot/core/package.json";
 
 interface StyleProps {
   sideMenuOpened?: boolean;
@@ -22,11 +22,11 @@ interface StyleProps {
 interface Props extends StyleProps {}
 
 function FrameProgram({}: Props) {
-  const pageTabLoaded = usePageTabStore(s => s.loaded);
-  const fullScreen = useAppStore(s => s.fullScreen);
-  const sideMenuOpened = useAppStore(s => s.sideMenuOpened);
-  const sideBoxOpened = useAppStore(s => s.sideBoxOpened);
-  const navPosition = useAppStore(s => s.navPosition);
+  const pageTabLoaded = usePageTabStore((s) => s.loaded);
+  const fullScreen = useAppStore((s) => s.fullScreen);
+  const sideMenuOpened = useAppStore((s) => s.sideMenuOpened);
+  const sideBoxOpened = useAppStore((s) => s.sideBoxOpened);
+  const navPosition = useAppStore((s) => s.navPosition);
 
   return (
     <PageFrameContainer>
@@ -59,7 +59,7 @@ function FrameProgram({}: Props) {
       </PageFrameContent>
       <PageFrameFooter>
         <div>
-          AXBoot.dev <b>{pkg.version}</b>
+          AXBoot/core <b>{pkg.version}</b>
         </div>
         Copyright 2024 AXISJ Inc. all rights reserved
       </PageFrameFooter>
@@ -73,20 +73,20 @@ const PageFrameContainer = styled.div`
   width: 100vw;
   flex: 1;
   overflow: hidden;
-  background: ${p => p.theme.body_background};
-  color: ${p => p.theme.text_body_color};
+  background: ${(p) => p.theme.body_background};
+  color: ${(p) => p.theme.text_body_color};
 `;
 const PageFrameHeaderTabBar = styled.div`
   ${SMixinFlexRow("stretch", "stretch")};
-  height: ${p => p.theme.tab_bar_height}px;
+  height: ${(p) => p.theme.tab_bar_height}px;
   overflow: hidden;
 `;
 
 const PageFrameHeader = styled.div`
   ${SMixinFlexRow("stretch", "center")};
   overflow: hidden;
-  background: ${p => p.theme.header_background};
-  border-bottom: 1px solid ${p => p.theme.border_color_base};
+  background: ${(p) => p.theme.header_background};
+  border-bottom: 1px solid ${(p) => p.theme.border_color_base};
   height: 55px;
 `;
 
@@ -96,8 +96,8 @@ const PageFrameLeftNav = styled.div<StyleProps>`
   position: relative;
   padding: 0;
   box-sizing: border-box;
-  background: ${p => p.theme.page_background};
-  border-right: 1px solid ${p => p.theme.border_color_base};
+  background: ${(p) => p.theme.page_background};
+  border-right: 1px solid ${(p) => p.theme.border_color_base};
   ${({ sideMenuOpened, theme }) => {
     if (sideMenuOpened) {
       return css`
@@ -118,8 +118,8 @@ const PageFrameSide = styled.div<StyleProps>`
   position: relative;
   padding: 0;
   box-sizing: border-box;
-  background: ${p => p.theme.page_background};
-  border-left: 1px solid ${p => p.theme.border_color_base};
+  background: ${(p) => p.theme.page_background};
+  border-left: 1px solid ${(p) => p.theme.border_color_base};
   z-index: 10;
 
   display: none;
@@ -145,13 +145,13 @@ const PageFrameContent = styled.div`
   flex: 1;
   ${SMixinFlexRow("stretch", "stretch")};
   overflow: hidden;
-  background-color: ${p => p.theme.page_background};
+  background-color: ${(p) => p.theme.page_background};
 `;
 const Content = styled.div`
   flex: 1;
   overflow: auto;
   ${SMixinFlexColumn("stretch", "stretch")};
-  background-color: ${p => p.theme.page_background};
+  background-color: ${(p) => p.theme.page_background};
 
   ${({ theme }) => css`
     ${SMixinScrollerStyle({
@@ -162,8 +162,8 @@ const Content = styled.div`
   `};
 `;
 const PageFrameFooter = styled.div`
-  border-top: 1px solid ${p => p.theme.border_color_base};
-  background: ${p => p.theme.header_background};
+  border-top: 1px solid ${(p) => p.theme.border_color_base};
+  background: ${(p) => p.theme.header_background};
   padding: 4px 16px;
   font-size: 11px;
   ${SMixinFlexRow("space-between", "center")}

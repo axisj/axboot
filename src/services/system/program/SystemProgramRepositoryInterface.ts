@@ -1,4 +1,4 @@
-import { DataGridPageResponse, DefaultDto } from "@src/@types";
+import { DataGridPageResponse, DefaultDto } from "@types";
 
 export interface SystemProgramFn extends DefaultDto {
   key: string;

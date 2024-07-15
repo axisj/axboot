@@ -1,5 +1,5 @@
 import { message } from "antd";
-import { errorHandling } from "../../../src/utils";
+import { errorHandling } from "utils";
 import { writeTextClipboard } from "./writeTextClipboard";
 
 const copyToClipboard = async (text?: string | number | null) => {

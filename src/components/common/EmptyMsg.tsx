@@ -1,7 +1,7 @@
-import { SMixinFlexColumn } from "@axboot/core/styles/emotion";
+import { SMixinFlexColumn } from "@axboot/core/styles";
 import styled from "@emotion/styled";
-import { IconSelectWindow } from "src/components/icon";
-import { useI18n } from "src/hooks";
+import { IconSelectWindow } from "components/icon";
+import { useI18n } from "hooks";
 import React from "react";
 
 interface Props {
@@ -45,16 +45,16 @@ const Container = styled.div`
 const Img = styled.div`
   font-size: 64px;
   line-height: 1;
-  color: ${p => p.theme.text_sub_body_color};
+  color: ${(p) => p.theme.text_sub_body_color};
   margin-bottom: 10px;
 `;
 const Title = styled.div`
   font-size: 16px;
   font-weight: 700;
-  color: ${p => p.theme.text_sub_body_color};
+  color: ${(p) => p.theme.text_sub_body_color};
 `;
 const Msg = styled.div`
-  color: ${p => p.theme.text_sub_body_color};
+  color: ${(p) => p.theme.text_sub_body_color};
 `;
 
 export { EmptyMsg };

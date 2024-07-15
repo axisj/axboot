@@ -1,6 +1,6 @@
-import enUS from "antd/es/locale/en_US";
 import koKR from "antd/es/locale/ko_KR";
-import { getI18n, useTranslation, UseTranslationOptions } from "react-i18next";
+import enUS from "antd/es/locale/en_US";
+import { useTranslation, UseTranslationOptions, getI18n } from "react-i18next";
 import { useAppStore } from "../stores";
 
 if (koKR.Calendar && koKR.DatePicker) {
@@ -24,7 +24,7 @@ if (koKR.Calendar && koKR.DatePicker) {
 
 export function useI18n(ns?: string | string[], options?: UseTranslationOptions<any>) {
   const { t, i18n } = useTranslation(ns, options);
-  const currentLanguage = useAppStore(s => s.currentLanguage);
+  const currentLanguage = useAppStore((s) => s.currentLanguage);
   return { t, i18n, currentLanguage, antdLocale: currentLanguage === "ko" ? koKR : enUS };
 }
 

@@ -1,7 +1,7 @@
 import { Button, Dropdown } from "antd";
 import { MenuProps } from "antd/lib/menu";
 import React from "react";
-import { useAppStore } from "@src/stores";
+import { useAppStore } from "stores";
 import { useI18n } from "../hooks";
 import { IconLanguage } from "./icon";
 
@@ -16,11 +16,11 @@ const LanguageLabel = {
 
 function LangSelector({ hideLabel }: Props) {
   const { i18n } = useI18n();
-  const currentLanguage = useAppStore(s => s.currentLanguage);
-  const setLanguage = useAppStore(s => s.setLanguage);
+  const currentLanguage = useAppStore((s) => s.currentLanguage);
+  const setLanguage = useAppStore((s) => s.setLanguage);
 
   const onClickMenu: MenuProps["onClick"] = React.useCallback(
-    info => {
+    (info) => {
       setLanguage(info.key);
       i18n.changeLanguage(info.key);
     },

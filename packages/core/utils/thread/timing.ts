@@ -3,7 +3,7 @@ import debounce from "lodash/debounce";
 import memoize from "lodash/memoize";
 
 export const delay = <T>(ms: number, result?: T): Promise<T> =>
-  new Promise<T>(res => setTimeout(() => res(result as T), ms));
+  new Promise<T>((res) => setTimeout(() => res(result as T), ms));
 
 export function memoizeDebounce<T extends (...args: any[]) => any>(
   func: T,
@@ -16,7 +16,7 @@ export function memoizeDebounce<T extends (...args: any[]) => any>(
 
   return function (...args: Parameters<T>) {
     const _args: string = args
-      .map(arg => {
+      .map((arg) => {
         if (typeof arg === "string") {
           return arg;
         }
@@ -29,7 +29,7 @@ export function memoizeDebounce<T extends (...args: any[]) => any>(
         }
         return undefined;
       })
-      .filter(arg => typeof arg === "string")
+      .filter((arg) => typeof arg === "string")
       .join("|");
 
     return mem(_args)(...args);

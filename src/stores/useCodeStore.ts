@@ -1,4 +1,4 @@
-import { StoreActions } from "@axboot/core/stores/types";
+import { StoreActions } from "@core/stores/types";
 import { create } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 import { SystemCommonCodeService } from "../services";
@@ -209,7 +209,7 @@ const createActions: StoreActions<CodeModel & CodeActions, CodeActions> = (set, 
     try {
       const data = await SystemCommonCodeService.getAllSystemCommonCodeCombo({});
       const map = {};
-      data.ds.forEach(n => {
+      data.ds.forEach((n) => {
         if (n.grpCd) {
           if (map[n.grpCd]) {
             const labels = { en: n.codeEngNm, ko: n.codeNm };

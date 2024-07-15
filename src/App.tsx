@@ -1,19 +1,19 @@
-import { Drawers, Modals, StoreSpinner } from "@axboot/core/components";
+import { Drawers, Modals, StoreSpinner } from "@core/components";
 import { ThemeProvider } from "@emotion/react";
 import { App as AntApp, ConfigProvider } from "antd";
 import * as React from "react";
 import { useThemeSwitcher } from "react-css-theme-switcher";
 import { BrowserRouter } from "react-router-dom";
-import PageRoute from "@src/router/PageRoute";
-import { useAppStore, usePageTabStore, useUserStore } from "@src/stores";
-import { themePalette } from "@src/styles/theme";
+import PageRoute from "router/PageRoute";
+import { useAppStore, usePageTabStore, useUserStore } from "stores";
+import { themePalette } from "styles/theme";
 import { getAppData } from "@axboot/core/utils/store";
 import { useBtnI18n, useI18n } from "./hooks";
 import { setApiHeader } from "./services/apiWrapper";
-import "./styles/index.less";
+import "styles/index.less";
 import "@axboot/core/utils/console";
 import "./customizeAntd";
-import "./i18n";
+import "i18n";
 
 const App: React.FC = () => {
   const { t, antdLocale } = useI18n();
@@ -21,11 +21,11 @@ const App: React.FC = () => {
 
   const { switcher, themes } = useThemeSwitcher();
   const [storeLoaded, setStoreLoaded] = React.useState(false);
-  const appStoreLoaded = useAppStore(s => s.loaded);
-  const setWidthHeight = useAppStore(s => s.setWidthHeight);
-  const pageStoreLoaded = usePageTabStore(s => s.loaded);
-  const userStoreLoaded = useUserStore(s => s.loaded);
-  const theme = useAppStore(s => s.theme);
+  const appStoreLoaded = useAppStore((s) => s.loaded);
+  const setWidthHeight = useAppStore((s) => s.setWidthHeight);
+  const pageStoreLoaded = usePageTabStore((s) => s.loaded);
+  const userStoreLoaded = useUserStore((s) => s.loaded);
+  const theme = useAppStore((s) => s.theme);
 
   const handleGetWindowSize = React.useCallback(() => {
     setWidthHeight(window.innerWidth, window.innerHeight);

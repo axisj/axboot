@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "typeRoots": [
       "typeRoots", "node_modules/@types"],
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
       "@src/*": ["src/*"]
     },
@@ -36,6 +36,6 @@
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src", "node_modules/@axboot/core", "package.json"],
-  "exclude": ["node_modules", "!node_modules/@axboot/core"]
+  "include": ["src", "package.json"],
+  "exclude": ["node_modules"]
 }

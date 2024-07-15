@@ -1,4 +1,4 @@
-import { MousePosition } from "../../../src/@types";
+import { MousePosition } from "@types";
 import throttle from "lodash/throttle";
 
 export type MouseEventSubscribeCallbackFn = (mousePosition: MousePosition, stopEvent: () => void) => void;

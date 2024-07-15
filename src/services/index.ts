@@ -1,4 +1,4 @@
-import { ExampleRepositoryMock } from "@axboot/core/services/example/ExampleRepositoryMock";
+import { ExampleRepositoryMock } from "@core/services/example/ExampleRepositoryMock";
 import { AppRepository } from "./app/AppRepository";
 import { MockDataRepository } from "./mockData/MockDataRepository";
 import { SystemCommonCodeRepository } from "./system/commonCode/SystemCommonCodeRepository";
@@ -8,7 +8,7 @@ import { SystemUserRepository } from "./system/user/SystemUserRepository";
 import { SystemUserGroupRepository } from "./system/userGroup/SystemUserGroupRepository";
 import { UserRepository } from "./user/UserRepository";
 
-export * from "@axboot/core/services/example/ExampleRepositoryInterface";
+export * from "@core/services/example/ExampleRepositoryInterface";
 export * from "./user/UserRepositoryInterface";
 export * from "./app/AppRepositoryInterface";
 

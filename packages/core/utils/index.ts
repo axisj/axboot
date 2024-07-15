@@ -7,3 +7,6 @@ export * from "./formPatterns";
 export * from "./number";
 export * from "./string";
 export * from "./thread";
+export * from "./store";
+export * from "./object";
+export * from "./color";

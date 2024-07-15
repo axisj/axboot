@@ -1,5 +1,5 @@
-import { DefaultDto } from "@src/@types";
-import { MenuIconType } from "@src/components/MenuIcon";
+import { DefaultDto } from "@types";
+import { MenuIconType } from "components/MenuIcon";
 
 export interface SystemMenu extends DefaultDto {
   menuGrpCd?: string;

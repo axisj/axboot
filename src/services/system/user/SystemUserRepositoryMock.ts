@@ -2,6 +2,7 @@ import { delay } from "@axboot/core/utils";
 import {
   PutSystemUserResetOtpRequest,
   PutSystemUserResetPwRequest,
+  PutSystemUserResetPwResponse,
   SystemUserRepositoryInterface,
 } from "./SystemUserRepositoryInterface";
 
