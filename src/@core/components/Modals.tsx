@@ -1,5 +1,6 @@
 import React from "react";
 import { useModalStore } from "stores";
+import { Loading } from "./common";
 
 function Modals() {
   const modals = useModalStore((s) => s.modals);
@@ -19,7 +20,9 @@ function Modals() {
         ]) => {
           if (modalFactory) {
             return (
-              <React.Fragment key={key}>{modalFactory(open, resolve, reject, onClose, afterClose)}</React.Fragment>
+              <React.Suspense fallback={<Loading active />} key={key}>
+                {modalFactory(open, resolve, reject, onClose, afterClose)}
+              </React.Suspense>
             );
           }
 

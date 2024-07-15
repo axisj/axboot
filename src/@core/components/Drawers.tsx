@@ -1,5 +1,6 @@
 import React from "react";
 import { useDrawerStore } from "stores";
+import { Loading } from "./common";
 
 function Drawers() {
   const drawers = useDrawerStore((s) => s.drawers);
@@ -19,9 +20,9 @@ function Drawers() {
         ]) => {
           if (drawerFactory) {
             return (
-              <React.Fragment key={key}>
+              <React.Suspense fallback={<Loading active />} key={key}>
                 {drawerFactory(open, resolve, reject, onClose, afterOpenChange)}
-              </React.Fragment>
+              </React.Suspense>
             );
           }
 
