@@ -4,7 +4,7 @@ import { ExampleItem, ExampleListRequest, ExampleSaveRequest } from "@core/servi
 import { pageStoreActions } from "@core/stores/pageStoreActions";
 import { PageStoreActions, StoreActions } from "@core/stores/types";
 import { getTabStoreListener } from "@core/stores/usePageTabStore";
-import { convertDateToString } from "@axboot/core/utils/object";
+import { convertDateToString } from "@core/utils/object";
 import { ProgramFn } from "@types";
 import React from "react";
 import { ExampleService } from "services";

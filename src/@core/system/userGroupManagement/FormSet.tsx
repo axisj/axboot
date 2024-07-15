@@ -1,4 +1,4 @@
-import { SMixinFlexColumn } from "@axboot/core/styles";
+import { SMixinFlexColumn } from "@core/styles/emotion";
 import styled from "@emotion/styled";
 import { Button, Col, Divider, Form, FormInstance, Input, Row, Select } from "antd";
 import { EmptyMsg } from "components/common";

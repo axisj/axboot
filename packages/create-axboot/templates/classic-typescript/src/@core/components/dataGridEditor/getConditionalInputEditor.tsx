@@ -2,7 +2,7 @@ import { AXFDGDataItem, AXFDGItemRenderProps } from "@axframe/datagrid";
 import styled from "@emotion/styled";
 import { Input } from "antd";
 import * as React from "react";
-import { alpha, darken } from "@axboot/core/utils";
+import { alpha, darken } from "../../styles/colorUtil";
 
 interface Config {
   isEditable?: (item: AXFDGDataItem<any>) => boolean;

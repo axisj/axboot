@@ -1,7 +1,7 @@
 import { IdcardOutlined, LockOutlined } from "@ant-design/icons";
 import { IconAXBootOpened } from "@core/components/axboot";
-import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles";
-import { getTrimNonEmptyRegExp } from "@axboot/core/utils";
+import { SMixinFlexColumn, SMixinFlexRow } from "@core/styles/emotion";
+import { getTrimNonEmptyRegExp } from "@core/utils";
 import styled from "@emotion/styled";
 import { Button, Checkbox, Divider, Form, Input, Space, Switch } from "antd";
 import { LangSelector } from "components/LangSelector";

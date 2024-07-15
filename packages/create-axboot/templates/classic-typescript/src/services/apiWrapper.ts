@@ -1,7 +1,8 @@
-import { delay, getAppData, setAppData } from "@axboot/core/utils";
-import { ApiErrorCode } from "@types";
+import { delay } from "@core/utils";
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { useUserStore } from "stores";
+import { getAppData, setAppData } from "../@core/utils/store";
+import { ApiErrorCode } from "../@types";
+import { useUserStore } from "../stores";
 import { ApiError } from "./ApiError";
 
 export const API_URL = (() => {

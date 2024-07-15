@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { SMixinFlexColumn, SMixinFlexRow, SMixinScrollerStyle } from "@axboot/core/styles";
-import { alpha } from "@axboot/core/utils";
+import { SMixinFlexColumn, SMixinFlexRow, SMixinScrollerStyle } from "../../@core/styles/emotion";
+import { alpha } from "../../@core/styles/colorUtil";
 import { PageLayoutProps } from "./PageLayout";
 
 export type HeaderSize = "small" | "medium" | "large";

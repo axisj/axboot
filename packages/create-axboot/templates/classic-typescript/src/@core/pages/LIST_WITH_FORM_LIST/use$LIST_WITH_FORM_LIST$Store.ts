@@ -9,8 +9,8 @@ import {
 import { pageStoreActions } from "@core/stores/pageStoreActions";
 import { PageStoreActions, StoreActions } from "@core/stores/types";
 import { getTabStoreListener } from "@core/stores/usePageTabStore";
-import { addDataGridList, delDataGridList } from "@axboot/core/utils";
-import { convertDateToString } from "@axboot/core/utils/object";
+import { addDataGridList, delDataGridList } from "@core/utils";
+import { convertDateToString } from "@core/utils/object";
 import { ProgramFn } from "@types";
 import omit from "lodash/omit";
 import React from "react";

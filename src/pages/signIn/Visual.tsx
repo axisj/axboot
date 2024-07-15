@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import React, { useEffect, useState } from "react";
 import pkg from "../../../package.json";
-import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexColumn, SMixinFlexRow } from "../../@core/styles/emotion";
 import { mediaMin } from "../../styles/mediaQueries";
 
 interface Props {}

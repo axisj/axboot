@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StatCol, StatRowTd, StatTableStyleProps } from "./types";
 import styled from "@emotion/styled";
-import { alpha } from "@axboot/core/utils";
+import { alpha } from "@core/styles/colorUtil";
 
 interface Props<T> {
   tableClassName?: string;

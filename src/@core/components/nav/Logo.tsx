@@ -1,11 +1,11 @@
-import { SMixinFlexRow } from "@axboot/core/styles";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Tag } from "antd";
 import React from "react";
 import { User } from "services";
-import { NavPosition, useAppStore } from "stores";
 import pkg from "../../../../package.json";
+import { NavPosition, useAppStore } from "../../../stores";
+import { SMixinFlexRow } from "../../styles/emotion";
 import { IconAXBootOpened } from "../axboot";
 
 interface StyleProps {

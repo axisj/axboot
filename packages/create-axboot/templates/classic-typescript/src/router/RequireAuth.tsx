@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAppStore, useCodeStore, useUserStore } from "stores";
-import { getFlattedMenus } from "@axboot/core/utils/store";
+import { getFlattedMenus } from "@core/utils/store";
 import { ROUTES } from "./Routes";
 import { useAppMenu } from "./useAppMenu";
 

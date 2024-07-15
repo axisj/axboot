@@ -3,7 +3,7 @@ import { useAntApp } from "@core/hooks";
 import { CustomError } from "@core/services/CustomError";
 import { ExampleItem, ExampleSaveRequest } from "@core/services/example/ExampleRepositoryInterface";
 import { useModalStore } from "@core/stores/useModalStore";
-import { convertDateToString } from "@axboot/core/utils/object";
+import { convertDateToString } from "@core/utils/object";
 import styled from "@emotion/styled";
 import { Button, Col, DatePicker, Form, Input, Modal, Row } from "antd";
 import { useBtnI18n, useDidMountEffect, useI18n } from "hooks";

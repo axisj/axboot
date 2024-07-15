@@ -1,4 +1,4 @@
-import { delay } from "@axboot/core/utils";
+import { delay } from "@core/utils";
 import { getAppMenuMockData } from "services/serviceMockUpData";
 import {
   AppRepositoryInterface,

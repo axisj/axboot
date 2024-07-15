@@ -1,4 +1,4 @@
-import { getPersistSerializer } from "@axboot/core/utils/store";
+import { getPersistSerializer } from "@core/utils/store";
 import { create, StateCreator } from "zustand";
 import { devtools, persist, PersistOptions } from "zustand/middleware";
 

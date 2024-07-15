@@ -1,5 +1,5 @@
 import { ExampleItem } from "@core/services/example/ExampleRepositoryInterface";
-import { convertToDate } from "@axboot/core/utils/object";
+import { convertToDate } from "@core/utils/object";
 import styled from "@emotion/styled";
 import { Button, Checkbox, Col, DatePicker, Form, FormInstance, Input, Radio, Row, Select, Space } from "antd";
 import dayjs from "dayjs";

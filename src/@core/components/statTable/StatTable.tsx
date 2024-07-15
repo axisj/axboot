@@ -5,10 +5,10 @@ import { StatTableTHead } from "./StatTableTHead";
 import { StatTableTBody } from "./StatTableTBody";
 import { StatTableTFoot } from "./StatTableTFoot";
 import { Loading } from "@core/components/common";
-import { SMixinScrollerStyle } from "@axboot/core/styles";
+import { SMixinScrollerStyle } from "@core/styles/emotion";
 import { StatTableRawBody } from "./StatTableRawBody";
 import { StatTableRawFoot } from "./StatTableRawFoot";
-import { alpha } from "@axboot/core/utils";
+import { alpha } from "@core/styles/colorUtil";
 
 function StatTable<T = Record<string, any>>({
   width,

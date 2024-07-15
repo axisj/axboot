@@ -7,12 +7,10 @@
     "rootDir": "./src",
     "outDir": "./lib",
     "esModuleInterop": true,
+    "skipLibCheck": true
   },
   "include": [
-    "bin",
-    "src",
-    "package.json",
-    "node_modules/@types/node/globals.d.ts"
+    "src"
   ],
-  "exclude": ["templates/", "*.d.ts", "node_modules/"]
+  "exclude": ["templates", "*.d.ts", "node_modules"]
 }

@@ -1,4 +1,4 @@
-import { SMixinEllipsis, SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinEllipsis, SMixinFlexRow } from "@core/styles/emotion";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Dropdown, Popover } from "antd";

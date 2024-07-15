@@ -1,4 +1,4 @@
-import { fnFilterLabel } from "@axboot/core/utils";
+import { fnFilterLabel } from "@core/utils";
 
 import {
   Cascader,

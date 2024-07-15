@@ -1,6 +1,6 @@
 import { CustomError } from "@core/services/CustomError";
 import { StoreActions } from "@core/stores/types";
-import { convertDateToString } from "@axboot/core/utils/object";
+import { convertDateToString } from "@core/utils/object";
 import { getI18n } from "hooks";
 import { ExampleItem, ExampleListRequest, ExampleSaveRequest, ExampleService, ExampleSubItem } from "services";
 import { create } from "zustand";

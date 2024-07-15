@@ -2,7 +2,7 @@ import { ClockCircleOutlined } from "@ant-design/icons";
 import styled from "@emotion/styled";
 import { Button, Timeline } from "antd";
 import React, { useCallback } from "react";
-import { SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexRow } from "../../styles/emotion";
 import { useAppStore } from "../../../stores";
 import { IconArrowLeft, IconArrowRight } from "../../../components/icon";
 

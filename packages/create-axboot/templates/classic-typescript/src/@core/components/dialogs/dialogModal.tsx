@@ -12,7 +12,7 @@ import { useBtnI18n } from "hooks";
 import React, { useMemo } from "react";
 import { ApiErrorCode } from "@types";
 import { useModalStore } from "@core/stores/useModalStore";
-import { SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexRow } from "@core/styles/emotion";
 
 export type DialogType = "info" | "success" | "error" | "warning" | "confirm";
 

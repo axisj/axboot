@@ -2,7 +2,7 @@ import { Loading } from "@core/components/common";
 import { useAntApp } from "@core/hooks";
 import { ExampleItem } from "@core/services/example/ExampleRepositoryInterface";
 import { useModalStore } from "@core/stores/useModalStore";
-import { delay } from "@axboot/core/utils";
+import { delay } from "@core/utils";
 import styled from "@emotion/styled";
 import { Button, Col, Form, Input, Modal, Row } from "antd";
 import { useBtnI18n, useDidMountEffect, useI18n } from "hooks";

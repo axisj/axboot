@@ -2,7 +2,7 @@ import * as React from "react";
 import { IconArrowDown, IconBin } from "../../../components/icon";
 import { useAppStore } from "../../../stores";
 import { themePalette } from "../../../styles/theme";
-import { SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexRow } from "../../styles/emotion";
 import { FilterComponent, FilterContainer, FilterLabel, FilterType, FilterTypeIcon, FilterValue } from "./Filter";
 import { Button, Calendar, Popover } from "antd";
 import { useFilterControl } from "./useFilterControl";

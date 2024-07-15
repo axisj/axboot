@@ -1,4 +1,4 @@
-import { mouseEventSubscribe } from "@axboot/core/utils";
+import { mouseEventSubscribe } from "@core/utils";
 import styled from "@emotion/styled";
 import { MousePosition } from "@types";
 import React from "react";

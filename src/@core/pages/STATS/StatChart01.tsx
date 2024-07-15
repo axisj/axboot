@@ -1,6 +1,6 @@
 import { Chart, ChartType } from "@core/components/Chart";
 import { Loading } from "@core/components/common";
-import { SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexRow } from "@core/styles/emotion";
 import styled from "@emotion/styled";
 import { Tabs } from "antd";
 import React from "react";

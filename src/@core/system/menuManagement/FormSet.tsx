@@ -1,7 +1,7 @@
 import { IconText, Loading } from "@core/components/common";
 import { useAntApp } from "@core/hooks";
 import { CustomError } from "@core/services/CustomError";
-import { convertToDate } from "@axboot/core/utils/object";
+import { convertToDate } from "@core/utils/object";
 import styled from "@emotion/styled";
 import { Button, Col, Divider, Form, FormInstance, Input, Row, Select } from "antd";
 import { EmptyMsg } from "components/common";

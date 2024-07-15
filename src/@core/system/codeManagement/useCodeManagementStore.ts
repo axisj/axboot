@@ -2,7 +2,7 @@ import { AXFDGDataItem, AXFDGDataItemStatus, AXFDGSortParam } from "@axframe/dat
 import { pageStoreActions } from "@core/stores/pageStoreActions";
 import { PageStoreActions, StoreActions } from "@core/stores/types";
 import { getTabStoreListener } from "@core/stores/usePageTabStore";
-import { addDataGridList, delDataGridList } from "@axboot/core/utils";
+import { addDataGridList, delDataGridList } from "@core/utils";
 import { ProgramFn } from "@types";
 import { ROUTES } from "router/Routes";
 import { GetSystemCodeRequest, GetSystemCommonCodeRequest, SystemCommonCode, SystemCommonCodeService } from "services";

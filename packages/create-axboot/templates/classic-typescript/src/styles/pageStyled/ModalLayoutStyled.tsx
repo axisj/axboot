@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
-import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexColumn, SMixinFlexRow } from "../../@core/styles/emotion";
 
 export interface ModalLayoutProps {
   id?: string;

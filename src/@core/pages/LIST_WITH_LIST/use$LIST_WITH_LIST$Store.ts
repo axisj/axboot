@@ -4,7 +4,7 @@ import { ExampleItem, ExampleListRequest, ExampleSubItem } from "@core/services/
 import { pageStoreActions } from "@core/stores/pageStoreActions";
 import { PageStoreActions, StoreActions } from "@core/stores/types";
 import { getTabStoreListener } from "@core/stores/usePageTabStore";
-import { addDataGridList, delDataGridList } from "@axboot/core/utils";
+import { addDataGridList, delDataGridList } from "@core/utils";
 import { ProgramFn } from "@types";
 import React from "react";
 import { ExampleService } from "services";

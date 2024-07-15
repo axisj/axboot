@@ -1,8 +1,8 @@
 import * as React from "react";
 import { ItemTotal, StatBodyTd, StatCol, StatSubTotal, StatTableStyleProps } from "./types";
-import { toMoney } from "@axboot/core/utils";
+import { toMoney } from "@core/utils";
 import styled from "@emotion/styled";
-import { alpha } from "@axboot/core/utils";
+import { alpha } from "@core/styles/colorUtil";
 
 interface Props<T> {
   tableWidth: number;

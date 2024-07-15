@@ -1,5 +1,5 @@
 import { usePageTabStore } from "@core/stores/usePageTabStore";
-import { SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexRow } from "@core/styles/emotion";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Dropdown } from "antd";

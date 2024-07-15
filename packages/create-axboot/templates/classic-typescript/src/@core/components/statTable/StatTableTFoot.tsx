@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ItemTotal, StatCol, StatTableStyleProps, StatTotal } from "./types";
-import { toMoney } from "@axboot/core/utils";
+import { toMoney } from "@core/utils";
 import styled from "@emotion/styled";
 
 interface Props<T> {

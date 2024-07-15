@@ -1,6 +1,6 @@
 import { UploadOutlined } from "@ant-design/icons";
-import { getFileNameAndExt } from "@axboot/core/utils";
-import { getAppData } from "@axboot/core/utils/store";
+import { getFileNameAndExt } from "@core/utils";
+import { getAppData } from "@core/utils/store";
 import { Button, Form, Modal, Upload, UploadFile } from "antd";
 import { RcFile, UploadProps } from "antd/es/upload";
 import { useI18n } from "hooks";

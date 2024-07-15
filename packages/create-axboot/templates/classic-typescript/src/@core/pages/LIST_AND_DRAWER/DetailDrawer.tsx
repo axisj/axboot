@@ -1,7 +1,7 @@
 import { Loading } from "@core/components/common";
 import { useAntApp } from "@core/hooks";
 import { useDrawerStore } from "@core/stores/useDrawerStore";
-import { delay } from "@axboot/core/utils";
+import { delay } from "@core/utils";
 import { Badge, Button, Descriptions, Drawer, Space } from "antd";
 import { useBtnI18n, useDidMountEffect, useI18n, useSpinning } from "hooks";
 import React from "react";

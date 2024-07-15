@@ -1,5 +1,5 @@
 import { IconText, LabelText } from "@core/components/common";
-import { SMixinFlexColumn } from "@axboot/core/styles";
+import { SMixinFlexColumn } from "@core/styles/emotion";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";

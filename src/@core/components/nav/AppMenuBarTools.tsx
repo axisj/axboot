@@ -1,5 +1,5 @@
-import { alpha, dangerouslySetInnerHTML } from "@axboot/core/utils";
-import { SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexRow } from "@core/styles/emotion";
+import { dangerouslySetInnerHTML } from "@core/utils";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Button, Dropdown, Space, Tooltip } from "antd";
@@ -12,12 +12,13 @@ import {
   IconSun,
   IconUserCircle,
 } from "components/icon";
-import { LangSelector } from "components/LangSelector";
 import { useBtnI18n, useI18n, useLink } from "hooks";
 import React, { useCallback } from "react";
 import { User } from "services";
 import { NavPosition, useAppStore, useUserStore } from "stores";
 import { errorHandling } from "utils";
+import { alpha } from "../../styles/colorUtil";
+import { LangSelector } from "../../../components/LangSelector";
 import { openSearchBoxModal } from "./SearchBoxModal";
 import UserInfoDropdown from "./UserInfoDropdown";
 

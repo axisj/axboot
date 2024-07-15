@@ -1,4 +1,4 @@
-import { delay } from "@axboot/core/utils";
+import { delay } from "@core/utils";
 import { SystemProgramRepositoryInterface } from "./SystemProgramRepositoryInterface";
 
 export class SystemProgramRepositoryMock implements SystemProgramRepositoryInterface {

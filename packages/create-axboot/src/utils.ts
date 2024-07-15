@@ -21,8 +21,8 @@ export async function readTemplates(): Promise<Template[]> {
 
   const templates = await Promise.all(
     dirContents
-      .filter(d => !d.startsWith(".") && !d.startsWith("README") && d !== "shared")
-      .map(async name => {
+      .filter((d) => !d.startsWith(".") && !d.startsWith("README") && d !== "shared")
+      .map(async (name) => {
         return {
           name,
           path: path.join(templatesDir, name),
@@ -31,7 +31,7 @@ export async function readTemplates(): Promise<Template[]> {
   );
 
   // Classic should be first in list!
-  return _.sortBy(templates, t => t.name !== recommendedTemplate);
+  return _.sortBy(templates, (t) => t.name !== recommendedTemplate);
 }
 
 export async function getAppName(reqName: string | undefined, rootDir: string): Promise<string> {
@@ -71,7 +71,7 @@ export async function getAppName(reqName: string | undefined, rootDir: string): 
 }
 
 export function isValidGitRepoUrl(gitRepoUrl: string): boolean {
-  return ["https://", "git@"].some(item => gitRepoUrl.startsWith(item));
+  return ["https://", "git@"].some((item) => gitRepoUrl.startsWith(item));
 }
 
 export async function getGitCommand(gitStrategy: GitStrategy): Promise<string> {
@@ -119,7 +119,7 @@ export async function copyTemplate(
   await fs.copy(sourcePath, dest, {
     // Symlinks don't exist in published npm packages anymore, so this is only
     // to prevent errors during local testing
-    filter: filePath => !fs.lstatSync(filePath).isSymbolicLink(),
+    filter: (filePath) => !fs.lstatSync(filePath).isSymbolicLink(),
   });
 }
 
@@ -141,7 +141,7 @@ async function findPackageManagerFromLockFile(rootDir: string): Promise<PackageM
 }
 
 function findPackageManagerFromUserAgent(): PackageManager | undefined {
-  return packageManagers.find(packageManager => process.env.npm_config_user_agent?.startsWith(packageManager));
+  return packageManagers.find((packageManager) => process.env.npm_config_user_agent?.startsWith(packageManager));
 }
 
 async function askForPackageManagerChoice(): Promise<PackageManager> {
@@ -154,7 +154,7 @@ async function askForPackageManagerChoice(): Promise<PackageManager> {
   }
   const choices = ["npm", hasYarn && "yarn", hasPnpm && "pnpm", hasBun && "bun"]
     .filter((p): p is string => Boolean(p))
-    .map(p => ({ title: p, value: p }));
+    .map((p) => ({ title: p, value: p }));
 
   return (
     (

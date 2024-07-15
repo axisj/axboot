@@ -7,11 +7,11 @@ import { BrowserRouter } from "react-router-dom";
 import PageRoute from "router/PageRoute";
 import { useAppStore, usePageTabStore, useUserStore } from "stores";
 import { themePalette } from "styles/theme";
-import { getAppData } from "@axboot/core/utils/store";
+import { getAppData } from "./@core/utils/store";
 import { useBtnI18n, useI18n } from "./hooks";
 import { setApiHeader } from "./services/apiWrapper";
 import "styles/index.less";
-import "@axboot/core/utils/console";
+import "@core/utils/console";
 import "./customizeAntd";
 import "i18n";
 

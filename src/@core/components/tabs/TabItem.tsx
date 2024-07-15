@@ -1,4 +1,4 @@
-import { SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexRow } from "@core/styles/emotion";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";

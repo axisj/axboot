@@ -1,11 +1,11 @@
-import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles";
 import styled from "@emotion/styled";
 import type { InputRef } from "antd";
 import { Button, Input, Popover } from "antd";
-import { IconArrowDown, IconBin } from "components/icon";
 import * as React from "react";
-import { useAppStore } from "stores";
-import { themePalette } from "styles/theme";
+import { IconArrowDown, IconBin } from "../../../components/icon";
+import { useAppStore } from "../../../stores";
+import { themePalette } from "../../../styles/theme";
+import { SMixinFlexColumn, SMixinFlexRow } from "../../styles/emotion";
 import { FilterComponent, FilterContainer, FilterLabel, FilterType, FilterTypeIcon, FilterValue } from "./Filter";
 import { FilterCondition } from "./FilterCondition";
 import { IFilterValue } from "./MultiFilter";

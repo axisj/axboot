@@ -1,5 +1,5 @@
 import { IconText } from "@core/components/common";
-import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexColumn, SMixinFlexRow } from "@core/styles/emotion";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Tooltip } from "antd";

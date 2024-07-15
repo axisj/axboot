@@ -5,14 +5,14 @@ import NavUserTopMenu from "@core/components/nav/NavUserTopMenu";
 import { SideBox } from "@core/components/nav/SideBox";
 import TabGroup from "@core/components/tabs/TabGroup";
 import { usePageTabStore } from "@core/stores/usePageTabStore";
-import { SMixinFlexColumn, SMixinFlexRow, SMixinScrollerStyle } from "@axboot/core/styles";
+import { SMixinFlexColumn, SMixinFlexRow, SMixinScrollerStyle } from "@core/styles/emotion";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { useAppStore } from "stores";
 import { mediaMin } from "styles/mediaQueries";
-import pkg from "@axboot/core/package.json";
+import pkg from "../../package.json";
 
 interface StyleProps {
   sideMenuOpened?: boolean;
@@ -59,7 +59,7 @@ function FrameProgram({}: Props) {
       </PageFrameContent>
       <PageFrameFooter>
         <div>
-          AXBoot/core <b>{pkg.version}</b>
+          AXBoot.dev <b>{pkg.version}</b>
         </div>
         Copyright 2024 AXISJ Inc. all rights reserved
       </PageFrameFooter>

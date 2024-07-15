@@ -60,6 +60,7 @@ export default async function init(
     await updatePkg(path.join(dest, "package.json"), {
       name: _.kebabCase(appName),
       version: "0.0.0",
+      workspaces: undefined,
       private: true,
     });
   } catch (err) {

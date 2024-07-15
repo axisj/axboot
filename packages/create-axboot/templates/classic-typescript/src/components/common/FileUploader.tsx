@@ -1,7 +1,7 @@
 import { DeleteOutlined, DownloadOutlined, EyeOutlined, QuestionCircleOutlined } from "@ant-design/icons";
 import { IconText } from "@core/components/common";
 import { errorDialog } from "@core/components/dialogs";
-import { getAppData } from "@axboot/core/utils/store";
+import { getAppData } from "@core/utils/store";
 import { FileDto } from "@types";
 import { Button, Form, Input, Modal, Popconfirm, Space } from "antd";
 import axios from "axios";

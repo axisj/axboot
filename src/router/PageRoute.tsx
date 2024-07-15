@@ -1,9 +1,9 @@
 import React from "react";
 import { matchPath, Route, Routes, useLocation } from "react-router-dom";
 import { usePageTabStore, useUserStore } from "stores";
-import { StoreSpinner } from "@core/components";
-import { EXAMPLE_ROUTERS } from "@core/router/exampleRouter";
-import { loadCoreExample, loadCoreSystem } from "utils/loadCorePage";
+import { StoreSpinner } from "../@core/components";
+import { EXAMPLE_ROUTERS } from "../@core/router/exampleRouter";
+import { loadCoreExample, loadCoreSystem } from "../@core/utils/object";
 import RequireAuth from "./RequireAuth";
 import RestrictAuth from "./RestrictAuth";
 import { ROUTES, ROUTES_LIST } from "./Routes";

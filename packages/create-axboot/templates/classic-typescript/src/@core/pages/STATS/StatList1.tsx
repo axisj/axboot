@@ -1,6 +1,6 @@
 import { StatDataGrid } from "@core/components/StatDataGrid";
 import { ExampleStatItem } from "@core/services/example/ExampleRepositoryInterface";
-import { toMoney } from "@axboot/core/utils";
+import { toMoney } from "@core/utils";
 import styled from "@emotion/styled";
 import { useContainerSize, useI18n } from "hooks";
 import React from "react";

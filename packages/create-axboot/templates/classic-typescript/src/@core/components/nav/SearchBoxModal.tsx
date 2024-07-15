@@ -5,11 +5,11 @@ import { useBtnI18n, useI18n } from "hooks";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ModalLayout } from "styles/pageStyled";
 import { useAntApp } from "@core/hooks";
-import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles";
-import { dangerouslySetInnerHTML } from "@axboot/core/utils";
+import { SMixinFlexColumn, SMixinFlexRow } from "@core/styles/emotion";
+import { dangerouslySetInnerHTML } from "@core/utils";
 import { MenuItem, PROGRAM_TYPES, useAppMenu } from "router";
 import { AppMenu } from "services";
-import { alpha } from "@axboot/core/utils";
+import { alpha } from "@core/styles/colorUtil";
 import { EmptyMsg } from "../../../components/common";
 import { IconClose, IconListSearch } from "../../../components/icon";
 

@@ -1,8 +1,8 @@
-import { clearAppData, getAppData } from "@axboot/core/utils";
 import buildStore from "@core/stores/buildStore";
-import { usePageTabStore } from "@core/stores/usePageTabStore";
 import { PROGRAM_TYPES } from "router";
 import { User, UserService } from "services";
+import { usePageTabStore } from "../@core/stores/usePageTabStore";
+import { clearAppData, getAppData } from "../@core/utils/store";
 import { setApiHeader } from "../services/apiWrapper";
 import { useAppStore } from "./useAppStore";
 

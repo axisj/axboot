@@ -1,4 +1,4 @@
-import { setAppData } from "@axboot/core/utils/store";
+import { setAppData } from "@core/utils/store";
 import pkg from "../../../package.json";
 import { apiWrapper, setApiHeader } from "../apiWrapper";
 import {

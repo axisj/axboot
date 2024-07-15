@@ -1,4 +1,4 @@
-import { SMixinFlexColumn, SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexColumn, SMixinFlexRow } from "@core/styles/emotion";
 import styled from "@emotion/styled";
 import { Button, Tooltip, Tree } from "antd";
 import { TreeProps } from "antd/lib/tree";

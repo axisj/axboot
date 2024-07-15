@@ -1,6 +1,6 @@
 import { useLink } from "@core/hooks";
-import { lighten } from "@axboot/core/utils";
-import { SMixinScrollerStyle } from "@axboot/core/styles";
+import { lighten } from "@core/styles/colorUtil";
+import { SMixinScrollerStyle } from "@core/styles/emotion";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Button, ConfigProvider, Menu, Tooltip } from "antd";

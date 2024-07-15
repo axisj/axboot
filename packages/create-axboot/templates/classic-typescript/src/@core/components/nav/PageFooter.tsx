@@ -1,5 +1,5 @@
 import { IconText } from "@core/components/common";
-import { SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexRow } from "@core/styles/emotion";
 import styled from "@emotion/styled";
 import { LangSelector } from "components/LangSelector";
 import React from "react";

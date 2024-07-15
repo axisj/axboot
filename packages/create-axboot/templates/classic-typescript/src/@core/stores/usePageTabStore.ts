@@ -1,5 +1,5 @@
 import buildStore from "@core/stores/buildStore";
-import { getFlattedAppMenus } from "@axboot/core/utils/store";
+import { getFlattedAppMenus } from "@core/utils/store";
 import { LanguageType } from "i18n";
 import React from "react";
 import { ROUTES_LIST } from "router";

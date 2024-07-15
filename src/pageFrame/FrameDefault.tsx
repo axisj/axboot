@@ -1,4 +1,4 @@
-import { SMixinFlexColumn } from "@axboot/core/styles";
+import { SMixinFlexColumn } from "@core/styles/emotion";
 import styled from "@emotion/styled";
 import React from "react";
 import { Outlet } from "react-router-dom";

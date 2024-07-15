@@ -2,7 +2,7 @@ import { AXFDataGrid, AXFDGProps } from "@axframe/datagrid";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import React from "react";
-import { SMixinScrollerStyle } from "@axboot/core/styles";
+import { SMixinScrollerStyle } from "../styles/emotion";
 
 interface Props<T> extends AXFDGProps<T> {}
 

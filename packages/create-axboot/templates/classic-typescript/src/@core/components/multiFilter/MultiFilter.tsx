@@ -1,4 +1,4 @@
-import { SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexRow } from "@core/styles/emotion";
 import styled from "@emotion/styled";
 import { Option } from "@types";
 import type { MenuProps } from "antd";

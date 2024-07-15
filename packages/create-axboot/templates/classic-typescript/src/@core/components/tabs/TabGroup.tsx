@@ -2,7 +2,7 @@ import { TabGroupMenuAction } from "@core/components/contextMenu";
 
 import { useLink } from "@core/hooks/useLink";
 import { usePageTabStore } from "@core/stores/usePageTabStore";
-import { SMixinFlexRow } from "@axboot/core/styles";
+import { SMixinFlexRow } from "@core/styles/emotion";
 import styled from "@emotion/styled";
 import type { MenuProps } from "antd";
 import { Dropdown } from "antd";

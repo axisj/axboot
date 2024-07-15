@@ -1,5 +1,5 @@
 import { AliasToken } from "antd/lib/theme/interface";
-import { alpha, darken } from "@axboot/core/utils"; // Using relative path because the tsconfig isn't set at building less file
+import { alpha, darken } from "../@core/styles/colorUtil"; // Using relative path because the tsconfig isn't set at building less file
 import DARK from "./palette/dark";
 import LIGHT from "./palette/light";
 

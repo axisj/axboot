@@ -46,6 +46,7 @@ export default async function init(rootDir, reqName, reqTemplate, cliOptions = {
         await updatePkg(path.join(dest, "package.json"), {
             name: _.kebabCase(appName),
             version: "0.0.0",
+            workspaces: undefined,
             private: true,
         });
     }

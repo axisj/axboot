@@ -1,5 +1,5 @@
 import { ExampleItem } from "@core/services/example/ExampleRepositoryInterface";
-import { convertToDate } from "@axboot/core/utils/object";
+import { convertToDate } from "@core/utils/object";
 import styled from "@emotion/styled";
 import { Col, DatePicker, Form, FormInstance, Input, Row } from "antd";
 import { useI18n } from "hooks";

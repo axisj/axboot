@@ -24,7 +24,4 @@ export default defineConfig({
       },
     },
   },
-  resolve: {
-    alias: [{ find: "@src", replacement: "src" }],
-  },
 });

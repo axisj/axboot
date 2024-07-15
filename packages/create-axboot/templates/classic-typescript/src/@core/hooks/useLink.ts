@@ -1,5 +1,5 @@
-import { stringFormat } from "@axboot/core/utils";
-import { getFlattedMenus } from "@axboot/core/utils/store";
+import { stringFormat } from "@core/utils";
+import { getFlattedMenus } from "@core/utils/store";
 import React from "react";
 import { generatePath, useNavigate } from "react-router-dom";
 import { MenuItem, RawRoute, ROUTES_LIST, useAppMenu } from "router";
