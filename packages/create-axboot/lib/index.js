@@ -2,7 +2,6 @@ import fs from "fs-extra";
 import _ from "lodash";
 import path from "path";
 import shell from "shelljs";
-import supportsColor from "supports-color";
 import { logger } from "./logger.js";
 import { getSource } from "./source.js";
 import { copyTemplate, escapeShellArg, getGitCommand, getPackageManager, getAppName, readTemplates, updatePkg, } from "./utils.js";
@@ -64,25 +63,27 @@ export default async function init(rootDir, reqName, reqTemplate, cliOptions = {
     // Display the most elegant way to cd.
     const cdpath = path.relative(".", dest);
     const pkgManager = await getPackageManager(dest, cliOptions);
-    if (!cliOptions.skipInstall) {
-        shell.cd(dest);
-        logger.info `Installing dependencies with name=${pkgManager}...`;
-        if (shell.exec(pkgManager === "yarn" ? "yarn" : pkgManager === "bun" ? "bun install" : `${pkgManager} install`, {
-            env: {
-                ...process.env,
-                // Force coloring the output, since the command is invoked by
-                // shelljs, which is not an interactive shell
-                ...(supportsColor.stdout ? { FORCE_COLOR: "1" } : {}),
-            },
-        }).code !== 0) {
-            logger.error("Dependency installation failed.");
-            logger.info `The App directory has already been created, and you can retry by typing:
-
-  code=${`cd ${cdpath}`}
-  code=${`${pkgManager} install`}`;
-            process.exit(0);
-        }
-    }
+    // if (!cliOptions.skipInstall) {
+    //   shell.cd(dest);
+    //   logger.info`Installing dependencies with name=${pkgManager}...`;
+    //   if (
+    //     shell.exec(pkgManager === "yarn" ? "yarn" : pkgManager === "bun" ? "bun install" : `${pkgManager} install`, {
+    //       env: {
+    //         ...process.env,
+    //         // Force coloring the output, since the command is invoked by
+    //         // shelljs, which is not an interactive shell
+    //         ...(supportsColor.stdout ? { FORCE_COLOR: "1" } : {}),
+    //       },
+    //     }).code !== 0
+    //   ) {
+    //     logger.error("Dependency installation failed.");
+    //     logger.info`The App directory has already been created, and you can retry by typing:
+    //
+    // code=${`cd ${cdpath}`}
+    // code=${`${pkgManager} install`}`;
+    //     process.exit(0);
+    //   }
+    // }
     const useNpm = pkgManager === "npm";
     const useBun = pkgManager === "bun";
     const useRunCommand = useNpm || useBun;
@@ -98,6 +99,7 @@ export default async function init(rootDir, reqName, reqTemplate, cliOptions = {
 We recommend that you begin by typing:
 
   code=${`cd ${cdpath}`}
+  cost=${`${pkgManager === "yarn" ? "yarn" : pkgManager === "bun" ? "bun install" : `${pkgManager} install`}`}
   code=${`${pkgManager} ${useRunCommand ? "run " : ""}dev`}
 
 If you have questions, feedback, or need help, please visit our website: url=${`https://axboot.dev`}

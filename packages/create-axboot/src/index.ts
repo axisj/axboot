@@ -79,27 +79,27 @@ export default async function init(
   // Display the most elegant way to cd.
   const cdpath = path.relative(".", dest);
   const pkgManager = await getPackageManager(dest, cliOptions);
-  if (!cliOptions.skipInstall) {
-    shell.cd(dest);
-    logger.info`Installing dependencies with name=${pkgManager}...`;
-    if (
-      shell.exec(pkgManager === "yarn" ? "yarn" : pkgManager === "bun" ? "bun install" : `${pkgManager} install`, {
-        env: {
-          ...process.env,
-          // Force coloring the output, since the command is invoked by
-          // shelljs, which is not an interactive shell
-          ...(supportsColor.stdout ? { FORCE_COLOR: "1" } : {}),
-        },
-      }).code !== 0
-    ) {
-      logger.error("Dependency installation failed.");
-      logger.info`The App directory has already been created, and you can retry by typing:
-
-  code=${`cd ${cdpath}`}
-  code=${`${pkgManager} install`}`;
-      process.exit(0);
-    }
-  }
+  // if (!cliOptions.skipInstall) {
+  //   shell.cd(dest);
+  //   logger.info`Installing dependencies with name=${pkgManager}...`;
+  //   if (
+  //     shell.exec(pkgManager === "yarn" ? "yarn" : pkgManager === "bun" ? "bun install" : `${pkgManager} install`, {
+  //       env: {
+  //         ...process.env,
+  //         // Force coloring the output, since the command is invoked by
+  //         // shelljs, which is not an interactive shell
+  //         ...(supportsColor.stdout ? { FORCE_COLOR: "1" } : {}),
+  //       },
+  //     }).code !== 0
+  //   ) {
+  //     logger.error("Dependency installation failed.");
+  //     logger.info`The App directory has already been created, and you can retry by typing:
+  //
+  // code=${`cd ${cdpath}`}
+  // code=${`${pkgManager} install`}`;
+  //     process.exit(0);
+  //   }
+  // }
 
   const useNpm = pkgManager === "npm";
   const useBun = pkgManager === "bun";
@@ -116,6 +116,7 @@ export default async function init(
 We recommend that you begin by typing:
 
   code=${`cd ${cdpath}`}
+  cost=${`${pkgManager === "yarn" ? "yarn" : pkgManager === "bun" ? "bun install" : `${pkgManager} install`}`}
   code=${`${pkgManager} ${useRunCommand ? "run " : ""}dev`}
 
 If you have questions, feedback, or need help, please visit our website: url=${`https://axboot.dev`}
